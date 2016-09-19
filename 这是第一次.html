@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+       输入框事件:
+       oninput:当表单元素内容发生变化时(IE低版本不支持)
+       onfocus:当元素获取焦点是
+       onblur:当元素失去焦点时
+       onchange:当元素内容发生改变时
+       window平台:内容发生呢个改变时就会触发
+       mac平台:在blur时,原来的内容反生变化时触发
+
+
+       区分单击和双击:双击事件同时也会触发单击
+
+
+       onkeydown   当键盘按键按下时
+       onkeypress  按(输入型按键按下时)
+       onkeyup     当键盘按键抬起时
+       onkeypress  只能识别输入性按键,如果识别键盘按键使用onkeydown
+       不能识别 ctrlkey  shiftkey  altkey
+       onmousemove
+       contextmenu  鼠标右击时
+       keycode  键盘按键对应的编码数字
+        onkeydown>onkeypress>onkeyup
+        onkeydown>onkeyup>onkeyclick
+
+        
+        取消默认
+        oncontextmenu
+        on+事件名称  attachEvent()
+        return false
+        addeventlistener 
+        e.preventdefault()
+
+
+        事件捕获:检查谁来处理这个事件,从大范围到小范围查找元素;从小范围到大范围询问谁来处理事件
+        事件冒泡:当元素处理完该事件之后,将事件交给父元素处理;
+
+        阻止事件冒泡:
+        on+事件名
+        event.canclebubble = true
+        addEventListener
+        stopPropagation();
+        
+        移入 移出
+        onmouseover/onmouseout  会引起事件冒泡
+        onmouseenter/onmouseleave 不会引起事件冒泡
+
+        事件源:(事件在哪一个DOM节点触发的)
+        标准:eve.target
+        ie:eve.srcElement
+        鼠标的按键值
+        eve.button
+        左中右 0 1 2
+
+
+        浏览器嗅探
+        window.navigator.useragent.indexOf("Firefox") != -1
+        非FF
+        onmousewheel
+        wheelDelta > 0 向上滚动
+
+        FF
+        DOMMouseScroll
+        detail > 0 向下滚动
+
+
+        cookie添加的格式:
+        以键值对的形式:
+        key=value
+        document.cookie = "name=lll"
+        expires  失效日期(默认是当前日期)
+        max-age 存活的秒数(默认-1)
+        同事设置expires和max-age  以max-age为准
+        localStorage  对象  将数据存储在本地的硬盘中
+        setItem(key,value) 添加一条数据
+        getItem(key)  获取指定属性名的数据
+        removeItem(key) 删除指定属性名的数据
+        clear()  清空所有数据
+
+        //添加一条数据
+	      //本质上 就是为localStorage对象添加属性
+	      localStorage.setItem("name","zzz");
+	     
+	      
+	      //添加键值对的方式2：
+	      localStorage.sex = "zhang";
+	      localStorage["age"] = "18";          
+	      console.log(localStorage);
+	      
+	      /**
+	       * 获取值
+	       * 
+	       * */
+	      var value = localStorage.getItem("name");
+	      console.log(value);
+	      
+	      /**删除*/
+	     localStorage.removeItem("name")
+	     console.log(localStorage)
+	     
+	     /**清空*/
+	   // localStorage.clear();
+	    console.log(localStorage)
+
+
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    //移动端使用触屏事件:
+	    touchstart  手指放到屏幕上时
+	    touchmove   手指在屏幕上移动
+	    touchend    手指从屏幕上离开
+	    touchcancel 事件被系统终止
+	    event.touches  当前屏幕上的触摸点的集合(存放手指对象的数组)
+	    获取第一个手指操作  event.touches[0]
+	    event.targetTouches  在元素范围内的触摸点集合
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加了 没反应？
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
